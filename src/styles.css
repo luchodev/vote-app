@@ -1,1 +1,137 @@
-/* You can add global styles to this file, and also import other style files */
+.html-container{
+  margin-top: -64px;
+}
+
+body{
+  margin-left: 0px;
+  margin-right: 0px;
+  font-family: 'Lato', sans-serif !important;
+}
+
+.menu-bar{
+  position: relative;
+  top: 60px;
+  background-color:rgba(0, 0, 0, 0.5);
+}
+
+.main-background{
+  width: 100%;
+  height: 300px;
+  background-size: 100% 100%;
+  background-image: url(assets/images/background/papa.png)
+}
+
+.default-background{
+  background-image: url(assets/images/background/default.png)
+}
+
+.nav-item{
+  color: white;
+  font-size: 14px;
+  text-decoration: none;
+  padding-left: 30px;
+}
+
+.home-link{
+  font-size: 27px;
+}
+
+.menu-item{
+  display: inline;
+}
+
+.right-link{
+  position: absolute;
+  right: 0;
+  margin-right: 6%;
+}
+
+.left-link{
+  margin-left: 135px;
+  position: absolute;
+}
+
+.content{
+  position: relative;
+  top:25%;
+  text-align: center;
+  color: white;
+}
+
+.article{
+  background-color: #7b7b7b;
+  height: 350px;
+  width: 36%;
+  margin-left: 85px;
+  opacity: 0.6;
+  text-align: left;
+}
+
+.article-container{
+  padding-top: 40px;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.rate{
+  height: 42px;
+  width: 36%;
+  margin-left: 85px;
+}
+
+.rate-up{
+  background-color: #00BCD4;
+  opacity: 0.6;
+  padding-top: 10px;
+  display: inline-block;
+  width: 50%;
+  height: 100%;
+}
+
+.rate-down{
+  background-color: #e8b007;
+  opacity: 0.6;
+  padding-top: 10px;
+  display: inline-block;
+  width: 50%;
+  height: 100%;
+}
+
+.title-article{
+  font-size: 45px;
+  padding-bottom: 15px;
+  padding-top: 5px;
+}
+
+.content-article{
+  font-size: 17px;
+  padding-bottom: 15px;
+}
+
+.info-article{
+  text-decoration: underline;
+}
+
+.footer-article{
+  padding-top: 20px;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+@media (min-width: 768px) {
+  .main-background{
+    height: 400px;
+  }
+ }
+
+@media (min-width: 992px) {
+  .main-background{
+    height: 700px;
+  }
+ }
+
+@media (min-width: 1500px) {
+  .main-background{
+    height: 770px;
+  }
+ }
