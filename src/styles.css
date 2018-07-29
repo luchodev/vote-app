@@ -14,15 +14,30 @@ body{
   background-color:rgba(0, 0, 0, 0.5);
 }
 
+.menu-bar > div > span{
+  display: inline-block;
+}
+
 .main-background{
   width: 100%;
-  height: 300px;
+  height: 700px;
   background-size: 100% 100%;
   background-image: url(assets/images/background/papa.png)
 }
 
 .default-background{
-  background-image: url(assets/images/background/default.png)
+  background-image: url(assets/images/background/default.png);
+  margin-top: -40px;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: fixed;
+  top: 95px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
 }
 
 .nav-item{
@@ -60,7 +75,7 @@ body{
 
 .article{
   background-color: #7b7b7b;
-  height: 350px;
+  height: 370px;
   width: 36%;
   margin-left: 85px;
   opacity: 0.6;
@@ -71,6 +86,41 @@ body{
   padding-top: 40px;
   padding-left: 40px;
   padding-right: 40px;
+}
+
+.alert-message{
+  display: flex;
+  justify-content: center;
+  background-color: #dcdcdc;
+  color: #807d7d;
+  padding: 22px;
+  margin-top: 22px;
+}
+
+.alert-message > div:first-child{
+  display: flex;
+  width: 20%;
+  font-size: 20px;
+}
+
+.alert-message > div:nth-child(2){
+  display: flex;
+  width: 75%;
+  align-items: center;
+}
+
+.alert-message > div:nth-child(3){
+  display: flex;
+  width: 5%;
+  align-items: center;
+}
+
+.pointer{
+  cursor: pointer;
+}
+
+#particles-js > canvas{
+  height: 250% !important;
 }
 
 .rate{
@@ -118,10 +168,65 @@ body{
   font-size: 20px;
 }
 
-@media (min-width: 768px) {
-  .main-background{
-    height: 400px;
+.mobile-menu{
+  display: none;
+  top: 16px;
+  color: white;
+  text-align: right;
+  position: absolute;
+  padding-left: 10px;
+  background-color: transparent;
+}
+
+@media (max-width: 600px){
+  .menu-item{
+    display: none;
   }
+  .mobile-menu{
+    display: block;
+  }
+  .main-background{
+    height: 700px;
+  }
+  .content{
+    top:15%;
+  }
+  .article{
+    background-color: #7b7b7b;
+    height: 460px;
+    width: 92%;
+    margin-left: 15px;
+    opacity: 0.6;
+    text-align: left;
+  }
+  .rate{
+    height: 42px;
+    width: 92%;
+    margin-left: 15px;
+  }
+}
+
+@media (max-width: 992px) and (min-width: 601px){
+  .article{
+    background-color: #7b7b7b;
+    height: 365px;
+    width: 50%;
+    margin-left: 85px;
+    opacity: 0.6;
+    text-align: left;
+  }
+  .rate{
+    height: 42px;
+    width: 50%;
+    margin-left: 85px;
+  }
+}
+
+@media (min-width: 768px) {
+  /* .main-background{
+    height: 700px;
+  } */
+
  }
 
 @media (min-width: 992px) {
