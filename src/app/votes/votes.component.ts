@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+declare var particlesJS: any;
 
 @Component({
   selector: 'app-votes',
@@ -7,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VotesComponent implements OnInit {
   Math: any;
+  hideMessage: boolean;
   peopleData: any[];
 
   constructor() {
@@ -14,6 +16,7 @@ export class VotesComponent implements OnInit {
   }
 
   ngOnInit() {
+    particlesJS.load('particles-js', 'assets/particles.json', null);
     let browserAppData = localStorage.getItem('voteAppData');
     if (browserAppData) {
       this.peopleData = JSON.parse(browserAppData);
@@ -34,6 +37,22 @@ export class VotesComponent implements OnInit {
         descriptionPicture: 'Vestibulum diam ante, porttitor a odio eget, rhoncus neque. Aenean eu velit libero',
         rateThumbUp: 0,
         rateThumbDown: 69
+      }, {
+        name: 'Cristina Fernández de Kirchner',
+        src: '../../assets/images/people/cristina.png',
+        datePicture: '1 month ago ',
+        placePicture: 'in Business',
+        descriptionPicture: 'Vestibulum diam ante, porttitor a odio eget, rhoncus neque. Aenean eu velit libero',
+        rateThumbUp: 5,
+        rateThumbDown: 3
+      }, {
+        name: 'Malala Yousafzai',
+        src: '../../assets/images/people/malala.png',
+        datePicture: '1 month ago ',
+        placePicture: 'in Business',
+        descriptionPicture: 'Vestibulum diam ante, porttitor a odio eget, rhoncus neque. Aenean eu velit libero',
+        rateThumbUp: 37,
+        rateThumbDown: 25
       }];
     }
   }
@@ -65,6 +84,10 @@ export class VotesComponent implements OnInit {
 
   saveDataInBrowser(): void {
     localStorage.setItem('voteAppData', JSON.stringify(this.peopleData));
+  }
+
+  hideAlertMessage(): void {
+    this.hideMessage = true;
   }
 
 }

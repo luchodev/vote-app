@@ -1,17 +1,23 @@
 <div>
-  <!-- <div class="menu-bar">menu  aqui</div> -->
 
   <nav class="menu-bar">
     <div class="menu-item left-link">
-        <a class="nav-item home-link" routerLink="/" routerLinkActive="active">Rule of Thumb.</a>
-
+      <a class="nav-item home-link" routerLink="/" routerLinkActive="active">Rule of Thumb.</a>
     </div>
     <div class="menu-item right-link">
-        <a class="nav-item" routerLink="/past-trials" routerLinkActive="active">Past Trials</a>
-        <a class="nav-item" routerLink="/how-it-works" routerLinkActive="active">How It Works</a>
-        <a class="nav-item" routerLink="/login" routerLinkActive="active">Log In / Sign Up</a>
+      <a class="nav-item" routerLink="/past-trials" routerLinkActive="active">Past Trials</a>
+      <a class="nav-item" routerLink="/how-it-works" routerLinkActive="active">How It Works</a>
+      <a class="nav-item" routerLink="/login" routerLinkActive="active">Log In / Sign Up</a>
+      <span class="nav-item">
+        <i class="material-icons">search</i>
+      </span>
     </div>
 
   </nav>
+
+  <div class="menu-bar mobile-menu">
+    <i class="material-icons">clear_all</i>
+  </div>
+
   <router-outlet></router-outlet>
 </div>
