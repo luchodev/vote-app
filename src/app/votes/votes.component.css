@@ -7,12 +7,12 @@
 }
 
 .title-person{
-  bottom: 6% !important;
+  bottom: 9% !important;
   left: -19px !important;
 }
 
 .card-image{
-  height: 550px;
+  height: 580px;
 }
 
 .card .card-image img{
@@ -28,9 +28,14 @@
   font-size: 11px;
 }
 
+.date-picture > span:first-child{
+  font-weight: bold;
+}
+
 .description-picture{
   font-size: 18px;
   margin-bottom: 16px;
+  margin-top: 5px;
 }
 
 .info-picture{
@@ -39,30 +44,9 @@
 
 .general-rate{
   display: inline;
-  background-color: #00BCD4;
-  opacity: 0.6;
   padding: 6px;
   margin-left: -5px;
   margin-right: 7px;
-}
-
-.rate-bar{
-  width: 100%;
-  padding: 0px !important;
-}
-
-.rate-up-bar{
-  width: 60%;
-  display: inline-block;
-  background-color: #00BCD4;
-  opacity: 0.6;
-}
-
-.rate-down-bar{
-  width: 40%;
-  display: inline-block;
-  background-color: #e8b007;
-  opacity: 0.6;
 }
 
 .buttons-card{
@@ -70,6 +54,45 @@
   padding: 8px;
   border-style: none;
   margin-right: 5px;
+}
+
+.button-select{
+  border-style: solid;
+  border-color: white;
+}
+
+.rate-values{
+  top: -35px;
+  background-color: transparent;
+  position: inherit;
+  color:white;
+}
+
+.rate-values > span:first-child{
+  padding-left: 10px;
+}
+
+.rate-values > span:nth-child(2) {
+  float: right;
+  padding-right: 60px
+}
+
+.rate-values > span > span{
+  top: -3px;
+  position: absolute;
+  padding-left: 8px;
+  font-size: 20px;
+}
+
+.rate-bar{
+  width: 100%;
+  height: 45px;
+  padding: 0px !important;
+}
+
+.rate-bar > div{
+  display: inline-block;
+  height: 100%;
 }
 
 .up-color{

@@ -4,76 +4,66 @@
   </p>
 
   <div class="row">
-    <div class="col s12 m6">
+    <div *ngFor="let person of peopleData" class="col s12 m6">
       <div class="card">
         <div class="card-image">
-          <img src="../../assets/images/people/kanye.png">
+          <img src="{{person.src}}">
           <div class="card-title title-person">
-            <div class="general-rate">
+            <div *ngIf="this.Math.ceil((person.rateThumbDown * 100) / (person.rateThumbUp + person.rateThumbDown)) < 50" class="general-rate up-color">
               <i class="material-icons md-48">thumb_up</i>
             </div>
-            <div class="name-person">Kanye rosemb</div>
-            <div class="info-picture">
-              <div class="date-picture">1 month ago</div>
-              <div class="description-picture">Vestibulum diam ante, porttitor a odio eget, rhoncus neque. Aenean eu velit libero</div>
-              <button class="buttons-card up-color">
-                  <i class="material-icons md-48">thumb_up</i>
-              </button>
-              <button class="buttons-card down-color">
-                  <i class="material-icons md-48">thumb_down</i>
-              </button>
-              <button class="buttons-card vote-now">
-                  vote now
-              </button>
-            </div>
-          </div>
-          <div class="card-title rate-bar">
-            <div class="rate-up-bar">
-              <i class="material-icons md-48">thumb_up</i>
-            </div>
-            <div class="rate-down-bar">
-              <i class="material-icons">thumb_down</i>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="col s12 m6">
-      <div class="card">
-        <div class="card-image">
-          <img src="../../assets/images/people/mark.png">
-          <div class="card-title title-person">
-            <div class="general-rate">
+            <div *ngIf="this.Math.floor((person.rateThumbDown * 100) / (person.rateThumbUp + person.rateThumbDown)) > 50" class="general-rate down-color">
               <i class="material-icons md-48">thumb_down</i>
             </div>
-            <div class="name-person">Mark Zuckerberg</div>
+            <div class="name-person">{{person.name}}</div>
             <div class="info-picture">
-              <div class="date-picture">1 month ago</div>
-              <div class="description-picture">Vestibulum diam ante, porttitor a odio eget, rhoncus neque. Aenean eu velit libero</div>
-              <button class="buttons-card up-color">
+              <div class="date-picture">
+                <span>{{person.datePicture}}</span>
+                <span>{{person.placePicture}}</span>
+              </div>
+              <div *ngIf="!person.showSuccesVote" class="description-picture">{{person.descriptionPicture}}</div>
+              <div *ngIf="person.showSuccesVote" class="description-picture"> Thank you for voting ! </div>
+              <div *ngIf="!person.showSuccesVote">
+                <button (click)="onThumbUpClick(person); $event.stopPropagation()" class="buttons-card up-color" [ngClass]="{'button-select': person.thumbUp}">
                   <i class="material-icons md-48">thumb_up</i>
-              </button>
-              <button class="buttons-card down-color">
+                </button>
+                <button (click)="onThumbDownClick(person); $event.stopPropagation()" class="buttons-card down-color" [ngClass]="{'button-select': person.thumbDown}">
                   <i class="material-icons md-48">thumb_down</i>
-              </button>
-              <button class="buttons-card vote-now">
+                </button>
+                <button (click)="onVoteClick(person); $event.stopPropagation()" class="buttons-card vote-now">
                   vote now
-              </button>
+                </button>
+              </div>
+              <div *ngIf="person.showSuccesVote">
+                <button (click)="onVoteAgain(person); $event.stopPropagation()" class="buttons-card vote-now">
+                  Vote again
+                </button>
+              </div>
             </div>
           </div>
           <div class="card-title rate-bar">
-              <div class="rate-up-bar">
-                <i class="material-icons md-48">thumb_up</i>
-              </div>
-              <div class="rate-down-bar">
-                <i class="material-icons">thumb_down</i>
-              </div>
+            <div class="up-color" [style.width.%]="this.Math.ceil((person.rateThumbUp * 100) / (person.rateThumbUp + person.rateThumbDown))">
             </div>
+            <div class="down-color" [style.width.%]="this.Math.floor((person.rateThumbDown * 100) / (person.rateThumbUp + person.rateThumbDown))">
+            </div>
+          </div>
+          <div class="rate-values">
+            <span>
+              <i class="material-icons md-48">thumb_up</i>
+              <span>
+                {{this.Math.ceil((person.rateThumbUp * 100) / (person.rateThumbUp + person.rateThumbDown))}} %
+              </span>
+            </span>
+            <span>
+              <i class="material-icons">thumb_down</i>
+              <span>
+                {{this.Math.floor((person.rateThumbDown * 100) / (person.rateThumbUp + person.rateThumbDown))}} %
+              </span>
+            </span>
+          </div>
         </div>
       </div>
     </div>
   </div>
-
 
 </div>
