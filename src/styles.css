@@ -88,6 +88,7 @@ body{
   padding-right: 40px;
 }
 
+
 .alert-message{
   display: flex;
   justify-content: center;
@@ -113,6 +114,52 @@ body{
   display: flex;
   width: 5%;
   align-items: center;
+}
+
+.submit-people{
+  display: flex;
+  justify-content: center;
+  background-image: url(assets/images/background/people.png);
+  color: #807d7d;
+  padding: 22px;
+  margin: 22px 0px;
+  opacity: 0.9;
+}
+
+.submit-people > div:first-child{
+  display: flex;
+  width: 75%;
+  font-size: 23px;
+  color: white;
+}
+
+.submit-people > div:nth-child(2){
+  display: flex;
+  width: 25%;
+  align-items: center;
+}
+
+.submit-people > div > button{
+  background-color: transparent;
+  border-color: white;
+  border-style: solid;
+  padding: 8px 65px;
+  color: white;
+}
+
+.footer-home{
+  margin: 20px 0px;
+  border-top-style: dashed;
+  border-top-width: 1px;
+}
+
+.footer-home > span:nth-child(2){
+  float: right;
+}
+
+.footer-home > span > span{
+  padding: 0px 10px;
+  font-size: 10px;
 }
 
 .pointer{
@@ -203,6 +250,21 @@ body{
     height: 42px;
     width: 92%;
     margin-left: 15px;
+  }
+  .submit-people{
+    flex-wrap: wrap;
+  }
+  .submit-people>div{
+    width: fit-content !important;
+  }
+  .footer-home > span:nth-child(2){
+    display:none;
+  }
+  .alert-message{
+    flex-wrap: wrap;
+  }
+  .alert-message > div:first-child{
+    width: fit-content !important;
   }
 }
 
